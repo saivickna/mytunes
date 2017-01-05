@@ -29,11 +29,8 @@ var Songs = Backbone.Collection.extend({
     });
   },
 
-  getSongsByFilter: function(keyword) {
-    var m = this.filter(function (song) {
-      return song.get('title') !== keyword;
-    });
-    this.remove(m);
+  findSongByTitle: function(title) {
+    return this.findWhere({title: title});
   }
 
 });

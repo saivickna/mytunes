@@ -29,7 +29,6 @@ var AppModel = Backbone.Model.extend({
       this.set('songQueue', songQ);
     }, this);
 
-
   }
 
 });

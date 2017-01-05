@@ -1,0 +1,81 @@
+audio:hover, audio:focus, audio:active
+{
+-webkit-box-shadow: 5px 5px 10px rgba(0,0, 0, 0.4);
+-moz-box-shadow: 5px 5px 10px rgba(0,0, 0, 0.4);
+box-shadow: 5px 5px 10px rgba(0,0, 0, 0.4);
+-webkit-transform: scale(1.001);
+-moz-transform: scale(1.001);
+transform: scale(1.001);
+}
+
+audio
+{
+-webkit-transition:all 0.1s linear;
+-moz-transition:all 0.1s linear;
+-o-transition:all 0.1s linear;
+transition:all 0.1s linear;
+-moz-box-shadow: 2px 2px 4px 0px #006773;
+-webkit-box-shadow:  2px 2px 4px 0px #006773;
+box-shadow: 2px 2px 4px 0px #006773;
+-moz-border-radius:7px 7px 7px 7px ;
+-webkit-border-radius:7px 7px 7px 7px ;
+border-radius:7px 7px 7px 7px ;
+}
+
+.library {
+    width: 60%;
+    margin-left: 20px;
+    margin-top: 120px;
+    display: inline-block;
+}
+
+.library thead tr th {
+    padding-right: 80px;
+    padding-left: 5px;
+}
+.library tbody tr td {
+    padding-right: 80px;
+    padding-left: 5px;
+}
+audio {
+    display:block;
+    position:fixed;
+    bottom:0;
+    width: 100%;
+}
+.appTitle {
+    width:100%;
+    position:fixed;
+    margin-top: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    top:0;
+    text-align: center;
+    display: block;
+    background-color: #fbe5c7;
+    color: grey;
+}
+
+.navbar {
+    position: fixed;
+    margin-top: 60px;
+    width: 100%
+}
+
+.songqueue {
+    width: 35%;
+    float:right;
+    margin-right: 20px;
+}
+
+.libraryEntry {
+    cursor: pointer;
+}
+
+.nowPlaying {
+    position: fixed;
+    bottom: 30px;
+    text-align: center;
+    width: 100%;
+    background-color: #f3efe7;
+}
