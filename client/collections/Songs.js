@@ -4,15 +4,17 @@ var Songs = Backbone.Collection.extend({
   model: SongModel,
 
   initialize: function() {
-    this.get();
+    this.getSongs();
   },
 
-  get: function() {
+  getSongs: function(keyword) {
     var collection = this;
+    //this.reset();
     $.ajax({
-  // This is the url you should use to communicate with the parse API server.
+    // This is the url you should use to communicate with the parse API server.
       url: 'https://api.parse.com/1/classes/songs/',
       type: 'GET',
+      //data: keyword ? {'where': `{"title":"${keyword}"}`} : undefined,
       contentType: 'application/json',
       success: function (data) {
         _.each(data.results, function(item) {
@@ -20,11 +22,18 @@ var Songs = Backbone.Collection.extend({
         });
         collection.trigger('complete');
       },
-      // error: function (data) {
+      error: function (data) {
         // See: https://developer.mozilla.org/en-US/docs/Web/API/console.error
-        // console.error(data);
-      // }
+        console.error(data);
+      }
     });
+  },
+
+  getSongsByFilter: function(keyword) {
+    var m = this.filter(function (song) {
+      return song.get('title') !== keyword;
+    });
+    this.remove(m);
   }
 
 });
