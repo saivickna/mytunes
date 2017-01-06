@@ -20,6 +20,8 @@ var SongQueueView = Backbone.View.extend({
           flag = true;
         })
       );
+    } else {
+      return this.$el.html('');
     }
 
   }
